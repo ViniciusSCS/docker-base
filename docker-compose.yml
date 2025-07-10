@@ -8,16 +8,16 @@ services:
       - ../www:/var/www/html
       - ./nginx:/etc/nginx/conf.d:ro
     depends_on:
-      - php82
+      - php83
 
-  php82:
+  php83:
     build:
-        context: ./php82
-        dockerfile: Dockerfile
-    container_name: php82
+      context: ./php83
+      dockerfile: Dockerfile
+    container_name: php83
     volumes:
       - ../www:/var/www/html
-      - ./php82/php.ini:/usr/local/etc/php/php.ini
+      - ./php83/php.ini:/usr/local/etc/php/php.ini
     depends_on:
       - mysql
 
