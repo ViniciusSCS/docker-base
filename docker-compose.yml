@@ -21,6 +21,16 @@ services:
     depends_on:
       - mysql
 
+  node20:
+    build:
+      context: ./node20
+      dockerfile: Dockerfile
+    container_name: node20
+    working_dir: /var/www/html
+    volumes:
+      - ../www:/var/www/html
+    tty: true  # permite bash interativo
+
   mysql:
     image: mysql:8.2
     container_name: mysql
