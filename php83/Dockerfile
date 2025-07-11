@@ -9,7 +9,13 @@ RUN apt-get update && apt-get install -y \
     libgettextpo-dev \
     curl \
     git \
-    && docker-php-ext-install intl pdo_mysql mysqli mbstring zip gettext \
+    libxml2-dev \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libssl-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install intl pdo_mysql mysqli mbstring zip gettext xml gd \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Instalar Composer
