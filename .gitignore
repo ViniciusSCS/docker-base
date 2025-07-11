@@ -1,4 +1,4 @@
 /mysql-data
-/nginx/editora.conf
-/nginx/periodicos.conf
+/nginx/conf.d/*.conf
+!/nginx/conf.d/default.conf
 .idea
